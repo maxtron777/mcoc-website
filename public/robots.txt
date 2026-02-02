@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mycirclesofcare.com.au/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff5d10"/>
+      <stop offset="100%" style="stop-color:#ff8040"/>
+    </linearGradient>
+  </defs>
+  <!-- Circles Icon -->
+  <circle cx="30" cy="40" r="20" fill="none" stroke="url(#gradient)" stroke-width="3"/>
+  <circle cx="50" cy="40" r="20" fill="none" stroke="#375278" stroke-width="3"/>
+  <circle cx="40" cy="55" r="20" fill="none" stroke="url(#gradient)" stroke-width="3" opacity="0.7"/>
+  <!-- Text -->
+  <text x="85" y="35" font-family="Roboto, sans-serif" font-size="20" font-weight="700" fill="#375278">My Circles</text>
+  <text x="85" y="58" font-family="Roboto, sans-serif" font-size="20" font-weight="700" fill="#ff5d10">of Care</text>
+</svg>
