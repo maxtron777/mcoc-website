@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Facebook, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig, services } from '@/lib/utils';
 
@@ -23,13 +22,10 @@ export default function Footer() {
           {/* Logo and Tagline */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/images/logo-white.png"
-                alt={`${siteConfig.name} Logo`}
-                width={180}
-                height={60}
-                className="h-14 w-auto"
-              />
+              <span className="text-2xl font-bold">
+                <span className="text-white">My Circles</span>{' '}
+                <span className="text-primary-400">of Care</span>
+              </span>
             </Link>
             <p className="text-lg font-medium text-primary-300 mb-4">
               We celebrate your Diff-ability
@@ -42,14 +38,8 @@ export default function Footer() {
 
             {/* NDIS Badge */}
             <div className="flex items-center gap-3 p-3 bg-white/10 rounded-lg">
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/ndis-logo.png"
-                  alt="NDIS Registered Provider"
-                  width={60}
-                  height={40}
-                  className="h-10 w-auto"
-                />
+              <div className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                <span className="text-secondary-500 font-bold text-xs">NDIS</span>
               </div>
               <div>
                 <p className="text-sm font-medium text-white">

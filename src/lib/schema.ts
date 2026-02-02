@@ -11,7 +11,7 @@ export function generateLocalBusinessSchema() {
     url: siteConfig.url,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteConfig.url}/images/logo.png`,
+      url: `${siteConfig.url}/images/logo.svg`,
       width: 300,
       height: 100,
     },
@@ -59,7 +59,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/logo.png`,
+    logo: `${siteConfig.url}/images/logo.svg`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+61413610404',
