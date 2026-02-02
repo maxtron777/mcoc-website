@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
+import { HeroCommunityIllustration } from '@/components/illustrations';
 
 export default function HeroSection() {
   return (
@@ -15,7 +16,8 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-3xl lg:max-w-none">
           {/* Main Headline */}
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             We Celebrate Your{' '}
@@ -59,6 +61,12 @@ export default function HeroSection() {
                 {siteConfig.phone}
               </a>
             </div>
+          </div>
+        </div>
+
+          {/* Hero Illustration */}
+          <div className="hidden lg:flex justify-center items-center">
+            <HeroCommunityIllustration className="w-full max-w-md xl:max-w-lg drop-shadow-2xl" />
           </div>
         </div>
       </div>

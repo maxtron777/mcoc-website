@@ -12,6 +12,25 @@ import {
 } from 'lucide-react';
 import { services, siteConfig } from '@/lib/utils';
 import Breadcrumb from '@/components/Breadcrumb';
+import {
+  SupportCoordinationIllustration,
+  PersonalCareIllustration,
+  PlanManagementIllustration,
+  IndependentLivingIllustration,
+  CommunityParticipationIllustration,
+  HouseholdTasksIllustration,
+  CirclesDecoration,
+} from '@/components/illustrations';
+
+// Illustration mapping for services
+const illustrationMap: Record<string, React.ReactNode> = {
+  'support-coordination': <SupportCoordinationIllustration className="w-full h-32" />,
+  'personal-activities': <PersonalCareIllustration className="w-full h-32" />,
+  'plan-management': <PlanManagementIllustration className="w-full h-32" />,
+  'support-independent-living': <IndependentLivingIllustration className="w-full h-32" />,
+  'community-participation': <CommunityParticipationIllustration className="w-full h-32" />,
+  'household-tasks': <HouseholdTasksIllustration className="w-full h-32" />,
+};
 
 export const metadata: Metadata = {
   title: 'Our NDIS Support Services | My Circles of Care',
@@ -53,8 +72,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
+      <section className="section-padding bg-gray-50 relative overflow-hidden">
+        <CirclesDecoration className="absolute inset-0 w-full h-full opacity-20" />
+        <div className="container-custom relative z-10">
           <div className="text-center mb-12">
             <h2 className="mb-4">How We Can Support You</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -68,10 +88,15 @@ export default function ServicesPage() {
             {services.map((service) => (
               <article
                 key={service.id}
-                className="card p-8 flex flex-col h-full group"
+                className="card p-8 flex flex-col h-full group hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="text-primary-500 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {iconMap[service.icon]}
+                {/* Service Illustration */}
+                <div className="mb-4 group-hover:scale-105 transition-transform duration-300">
+                  {illustrationMap[service.id] || (
+                    <div className="text-primary-500">
+                      {iconMap[service.icon]}
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-4 flex-grow">

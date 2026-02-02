@@ -14,6 +14,12 @@ import {
 } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import Breadcrumb from '@/components/Breadcrumb';
+import {
+  NDISJourneyIllustration,
+  SupportCoordinationIllustration,
+  PlanManagementIllustration,
+  CirclesDecoration,
+} from '@/components/illustrations';
 
 export const metadata: Metadata = {
   title: 'NDIS Resources & Guides | My Circles of Care',
@@ -119,26 +125,32 @@ export default function NDISResourcesPage() {
       </section>
 
       {/* Introduction Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <CirclesDecoration className="absolute inset-0 w-full h-full opacity-20" />
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
               <Info className="w-8 h-8 text-primary-500" />
             </div>
             <h2 className="mb-6">Navigating the NDIS</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
               The National Disability Insurance Scheme (NDIS) is Australia&apos;s way of
               providing support to people with disability, their families, and carers.
               Whether you&apos;re new to the NDIS or looking to better understand your plan,
               these resources will help you make the most of the support available to you.
             </p>
+            {/* Journey Illustration */}
+            <div className="max-w-2xl mx-auto">
+              <NDISJourneyIllustration className="w-full" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* What is the NDIS Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
+      <section className="section-padding bg-gray-50 relative overflow-hidden">
+        <CirclesDecoration className="absolute inset-0 w-full h-full opacity-15" />
+        <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="mb-6">What is the NDIS?</h2>

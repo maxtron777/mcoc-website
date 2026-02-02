@@ -13,6 +13,10 @@ import {
 } from 'lucide-react';
 import { siteConfig } from '@/lib/utils';
 import Breadcrumb from '@/components/Breadcrumb';
+import {
+  FamilySupportIllustration,
+  CirclesDecoration,
+} from '@/components/illustrations';
 
 export const metadata: Metadata = {
   title: 'For Families | Support for NDIS Participant Families | My Circles of Care',
@@ -143,9 +147,10 @@ export default function ForFamiliesPage() {
       </section>
 
       {/* Introduction Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <CirclesDecoration className="absolute inset-0 w-full h-full opacity-20" />
+        <div className="container-custom relative z-10">
+          <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="mb-6">We Understand the Challenges</h2>
@@ -162,18 +167,20 @@ export default function ForFamiliesPage() {
                   supported, and confident in the care being provided.
                 </p>
               </div>
-              <div className="bg-primary-50 rounded-lg p-8">
-                <h3 className="text-xl font-bold mb-4">You Are Not Alone</h3>
-                <p className="text-gray-700 mb-6">
-                  Many families share similar experiences &mdash; the worry about finding
-                  the right support, the stress of managing appointments and paperwork,
-                  the hope for their loved one&apos;s future.
-                </p>
-                <p className="text-gray-700">
-                  We have been privileged to walk alongside hundreds of families on the
-                  Central Coast. We are here to make this journey easier for you and
-                  your loved one.
-                </p>
+              <div className="flex flex-col items-center">
+                <FamilySupportIllustration className="w-full max-w-sm mb-6" />
+                <div className="bg-primary-50 rounded-lg p-6 w-full">
+                  <h3 className="text-xl font-bold mb-4">You Are Not Alone</h3>
+                  <p className="text-gray-700 mb-4">
+                    Many families share similar experiences &mdash; the worry about finding
+                    the right support, the stress of managing appointments and paperwork,
+                    the hope for their loved one&apos;s future.
+                  </p>
+                  <p className="text-gray-700">
+                    We have been privileged to walk alongside hundreds of families on the
+                    Central Coast.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

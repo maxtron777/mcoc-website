@@ -5,6 +5,7 @@ import ServiceCard from '@/components/ServiceCard';
 import StatsSection from '@/components/StatsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { services, siteConfig } from '@/lib/utils';
+import { NDISJourneyIllustration, CirclesDecoration } from '@/components/illustrations';
 
 // How It Works steps data
 const howItWorksSteps = [
@@ -81,17 +82,22 @@ export default function HomePage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <CirclesDecoration className="absolute inset-0 w-full h-full opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-secondary-500 mb-4">
               How It Works
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
               Getting started with My Circles of Care is simple. Here is how we help you
               on your journey to better support.
             </p>
+            {/* Journey Illustration */}
+            <div className="max-w-3xl mx-auto mb-12">
+              <NDISJourneyIllustration className="w-full" />
+            </div>
           </div>
 
           {/* Steps Grid */}

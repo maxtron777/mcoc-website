@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import { siteConfig } from '@/lib/utils';
+import { LocationIllustration, CirclesDecoration } from '@/components/illustrations';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -141,28 +142,11 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Google Maps Embed Placeholder */}
+              {/* Location Illustration */}
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                  {/* Replace with actual Google Maps embed */}
-                  <div className="text-center p-8">
-                    <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500 font-medium">Google Maps</p>
-                    <p className="text-gray-400 text-sm mt-1">{fullAddress}</p>
-                    {/*
-                      To embed Google Maps, replace this div with:
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="My Circles of Care office location"
-                      />
-                    */}
-                  </div>
+                <div className="aspect-video bg-gradient-to-br from-primary-50 to-white flex items-center justify-center relative">
+                  <CirclesDecoration className="absolute inset-0 w-full h-full opacity-30" />
+                  <LocationIllustration className="w-full max-w-xs relative z-10" />
                 </div>
                 <div className="p-4 bg-gray-50">
                   <a

@@ -15,6 +15,25 @@ import {
 import { services, siteConfig } from '@/lib/utils';
 import { generateServiceSchema } from '@/lib/schema';
 import Breadcrumb from '@/components/Breadcrumb';
+import {
+  SupportCoordinationIllustration,
+  PersonalCareIllustration,
+  PlanManagementIllustration,
+  IndependentLivingIllustration,
+  CommunityParticipationIllustration,
+  HouseholdTasksIllustration,
+  CirclesDecoration,
+} from '@/components/illustrations';
+
+// Illustration mapping for services
+const illustrationMap: Record<string, React.ReactNode> = {
+  'support-coordination': <SupportCoordinationIllustration className="w-32 h-32" />,
+  'personal-activities': <PersonalCareIllustration className="w-32 h-32" />,
+  'plan-management': <PlanManagementIllustration className="w-32 h-32" />,
+  'support-independent-living': <IndependentLivingIllustration className="w-32 h-32" />,
+  'community-participation': <CommunityParticipationIllustration className="w-32 h-32" />,
+  'household-tasks': <HouseholdTasksIllustration className="w-32 h-32" />,
+};
 
 const iconMap: Record<string, React.ReactNode> = {
   Users: <Users className="w-16 h-16" />,
@@ -92,8 +111,9 @@ export default async function ServicePage({ params }: PageProps) {
       />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white py-16 md:py-24">
-          <div className="container-custom">
+        <section className="bg-gradient-to-br from-primary-500 to-primary-600 text-white py-16 md:py-24 relative overflow-hidden">
+          <CirclesDecoration className="absolute inset-0 w-full h-full opacity-10" />
+          <div className="container-custom relative z-10">
             <Breadcrumb
               items={[
                 { label: 'Services', href: '/services' },
@@ -101,7 +121,11 @@ export default async function ServicePage({ params }: PageProps) {
               ]}
             />
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
-              <div className="text-white/90">{iconMap[service.icon]}</div>
+              <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                {illustrationMap[service.id] || (
+                  <div className="text-white/90">{iconMap[service.icon]}</div>
+                )}
+              </div>
               <div className="flex-1">
                 <h1 className="text-white mb-4">{service.title}</h1>
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed">

@@ -12,6 +12,11 @@ import {
 } from 'lucide-react';
 import { siteConfig, stats } from '@/lib/utils';
 import Breadcrumb from '@/components/Breadcrumb';
+import {
+  DiffabilityIllustration,
+  FamilySupportIllustration,
+  CirclesDecoration,
+} from '@/components/illustrations';
 
 export const metadata: Metadata = {
   title: 'About Us | My Circles of Care | NDIS Provider Central Coast',
@@ -120,37 +125,41 @@ export default function AboutPage() {
                 every achievement, big or small.
               </p>
             </div>
-            <div className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center">
-              <div className="text-center p-8">
-                <Users className="w-16 h-16 text-primary-500 mx-auto mb-4" />
-                <p className="text-gray-500">Team Photo Placeholder</p>
-              </div>
+            <div className="bg-gradient-to-br from-primary-50 to-white rounded-lg aspect-video flex items-center justify-center relative overflow-hidden">
+              <CirclesDecoration className="absolute inset-0 w-full h-full opacity-50" />
+              <FamilySupportIllustration className="w-full max-w-sm relative z-10" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Diff-ability Section */}
-      <section className="section-padding bg-primary-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-6">We Celebrate Your Diff-ability</h2>
-            <p className="text-2xl text-primary-600 font-semibold mb-6">
-              &ldquo;We celebrate your Diff-ability!&rdquo;
-            </p>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              At My Circles of Care, we believe that disability is not a limitation
-              &mdash; it&apos;s a different ability. Every person has unique
-              strengths, talents, and potential. Our role is to support you in
-              discovering and celebrating what makes you uniquely you.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              We don&apos;t focus on what you can&apos;t do. Instead, we work
-              alongside you to build on your strengths, overcome challenges, and
-              achieve your personal goals. Whether it&apos;s gaining independence,
-              connecting with your community, or pursuing your passions, we&apos;re
-              here to support your journey every step of the way.
-            </p>
+      <section className="section-padding bg-primary-50 relative overflow-hidden">
+        <CirclesDecoration className="absolute inset-0 w-full h-full opacity-30" />
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <DiffabilityIllustration className="w-full max-w-md mx-auto" />
+            </div>
+            <div className="order-1 lg:order-2 text-center lg:text-left">
+              <h2 className="mb-6">We Celebrate Your Diff-ability</h2>
+              <p className="text-2xl text-primary-600 font-semibold mb-6">
+                &ldquo;We celebrate your Diff-ability!&rdquo;
+              </p>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                At My Circles of Care, we believe that disability is not a limitation
+                &mdash; it&apos;s a different ability. Every person has unique
+                strengths, talents, and potential. Our role is to support you in
+                discovering and celebrating what makes you uniquely you.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                We don&apos;t focus on what you can&apos;t do. Instead, we work
+                alongside you to build on your strengths, overcome challenges, and
+                achieve your personal goals. Whether it&apos;s gaining independence,
+                connecting with your community, or pursuing your passions, we&apos;re
+                here to support your journey every step of the way.
+              </p>
+            </div>
           </div>
         </div>
       </section>
