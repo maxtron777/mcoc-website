@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig, services } from '@/lib/utils';
 
@@ -22,10 +23,13 @@ export default function Footer() {
           {/* Logo and Tagline */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold">
-                <span className="text-white">My Circles</span>{' '}
-                <span className="text-primary-400">of Care</span>
-              </span>
+              <Image
+                src="/images/logo.png"
+                alt={`${siteConfig.name} Logo`}
+                width={180}
+                height={60}
+                className="h-12 w-auto md:h-14 bg-white rounded-lg p-2"
+              />
             </Link>
             <p className="text-lg font-medium text-primary-300 mb-4">
               We celebrate your Diff-ability
