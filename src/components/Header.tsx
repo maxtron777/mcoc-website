@@ -86,7 +86,7 @@ export default function Header() {
             onClick={closeMenu}
           >
             <Image
-              src="/images/logo.PNG"
+              src="/images/logo.png"
               alt={`${siteConfig.name} Logo`}
               width={180}
               height={60}
